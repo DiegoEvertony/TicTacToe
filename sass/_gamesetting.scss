@@ -1,0 +1,305 @@
+*{
+    @include reset;
+}
+
+body {
+    background: $colorBackground2;
+    background: linear-gradient(180deg, $colorBackground2 0%, $colorBackground1 100%);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 40px;
+    @include centralizarPosition;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: $colorBackground2;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: $colorBackground1;
+    border-radius: 50px;
+}
+
+.alertButton{
+    position: absolute;
+    top: -26px;
+    width: min(100%, 430px);
+    margin: 0 auto;
+    padding: 5px;
+
+    @include animation1();
+    animation-name: animation1;
+    animation-duration: .7s;
+
+
+    @include displayFlex("center");
+    gap: .5em;
+    background-color: #E02D5C;
+    border-radius: 15px;
+
+    @include tamanho("celular"){
+        width: min(100%, 286px);
+        top: -15px;
+        border-radius: 10px;
+        padding: 3.3px;
+    }
+
+    img.alertImg{
+        @include animation3();
+        animation-name: animation3;
+        animation-duration: 1s;
+
+        @include tamanho("celular"){
+            width: 20px;
+        }
+    }
+
+    span.alertSpan{
+        // transition: .9 all;
+        color: white;
+        font-size: 20px;
+
+        @include animation2();
+        animation-name: animation2;
+        animation-duration: 1s;
+
+        @include tamanho("celular"){
+            font-size: 13px;
+        }
+    }
+}
+
+
+
+.conteinerSetting{
+    // @include centralizarPosition;
+    position: relative;
+    max-width: 455px;
+    background-color: $colorBackground1;
+    padding: 20px;
+    border-radius: 60px;
+    margin: 0 auto;
+
+    @include displayFlex("center");
+    flex-direction: column;
+
+    @include tamanho("celular"){
+        border-radius: 40px;
+    }
+
+    h2{
+        padding: 10px 0;
+        font-size: 27px;
+        text-align: center;
+        color: $color5;
+
+        @include tamanho("celular"){
+            font-size: 20px;
+        }
+    }
+
+    .profiles{
+        @include displayFlex("center");
+        gap: 1.8em;
+        margin-bottom: -20px;
+
+        @include tamanho("celular"){
+            gap: .8em;
+        }
+
+        img{
+            width: min(100%, 130px);
+
+            @include tamanho("celular"){
+                width: min(100%, 86px);
+            }
+        }
+
+        .profile1{
+            @include displayFlex("center");
+            flex-direction: column;
+
+            span{
+                position: relative;
+                left: -52px;
+                top: -38px;
+
+                font-size: 40px;
+                color: $color1;
+
+                @include tamanho("celular"){
+                    font-size: 26px;
+                    left: -34px;
+                    top: -25px;
+                }
+            }
+        }
+
+        .profile2{
+            @include displayFlex("center");
+            flex-direction: column;
+
+            span{
+                position: relative;
+                left: 55px;
+                top: -38px;
+
+                font-size: 40px;
+                color: $color2;
+
+                @include tamanho("celular"){
+                    font-size: 26px;
+                    left: 40px;
+                    top: -26px;
+                }
+            }
+        }
+    }
+
+    .inputNameX{
+        @include displayFlex("center");
+        gap: 1em;
+
+        span{
+            font-size: 55px;
+            color: $color1;
+            
+            @include tamanho("celular"){
+                font-size: 36px;
+            }
+        }
+
+        input{
+            width: min(100%, 180px);
+            padding: 3px 10px;
+            border-radius: 10px;
+            border: none;
+            font-size: 30px;
+            // color: #6e6e6e;
+            color: $colorBackground2;
+
+            &::placeholder{
+                color: $color7;
+            }
+
+            @include tamanho("celular"){
+                font-size: 20px;
+                border-radius: 7px;
+            }
+        }
+    }
+
+    .inputNameO{
+        @include displayFlex("center");
+        gap: 1em;
+
+        span{
+            font-size: 55px;
+            color: $color2;
+
+            @include tamanho("celular"){
+                font-size: 36px;
+            }
+        }
+
+        input{
+            width: min(100%, 180px);
+            padding: 3px 10px;
+            border-radius: 10px;
+            border: none;
+            font-size: 30px;
+            // color: #6e6e6e;
+            color: $colorBackground2;
+
+            &::placeholder{
+                color: $color7;
+            }
+
+            @include tamanho("celular"){
+                font-size: 20px;
+                border-radius: 7px;
+            }
+        }
+    }
+
+    .rounds{
+        @include displayFlex;
+        justify-content: space-around;
+        width: min(100%, 340px);
+        // width: min(100%, 244px);
+        background-color: $colorBackground2;
+        padding: 10px;
+        border-radius: 15px;
+        gap: .7em;
+
+        @include tamanho("celular"){
+            width: min(100%, 244px);
+
+        }
+
+        .checkClick{
+            background-color: $color5;
+            color: $colorBackground1;
+            transition: .5s all;
+
+            &:hover{
+                box-shadow: -2px 5px 0px $colorBackground1;
+                transform: translate(0px, -4px);  
+            }
+        }
+
+        button{
+            flex: 1;
+            padding: 5px;
+            border-radius: 10px;
+
+            font-size: 33px;
+            color: $color4;
+            background-color: $colorBackground1;
+            transition: .5s all;
+
+            &:hover{
+                box-shadow: -2px 5px 0px $color5;
+                transform: translate(0px, -4px);  
+            }
+
+            @include tamanho("celular"){
+                font-size: 22px;
+                border-radius: 7px;
+            }
+        }
+    }
+
+    a{
+        margin: 20px 0 0;
+        width: min(100%, 150px);
+        background-color: $colorBackground2;
+        @include displayFlex("center");
+        border-radius: 20px;
+        padding: 10px 20px;
+        transition: .5s all;
+
+        &:hover{
+            box-shadow: -2px 5px 0px $color5;
+            transform: translate(0px, -4px);      
+        }
+
+        @include tamanho("celular"){
+            width: min(100%, 100px);
+            border-radius: 13px;
+        }
+
+        img{
+            width: min(100%, 50px);
+        }
+    }
+}
+

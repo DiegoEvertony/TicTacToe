@@ -1,0 +1,113 @@
+*{
+    @include reset;
+}
+
+body {
+    background: $colorBackground2;
+    background: linear-gradient(180deg, $colorBackground2 0%, $colorBackground1 100%);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 40px;
+    // @include centralizarPosition;
+}
+
+// body {
+//     background: $colorBackground2;
+//     background: linear-gradient(180deg, $colorBackground2 0%, $colorBackground1 100%);
+//     background-position: center center;
+//     background-attachment: fixed;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     padding: 40px;
+//     // @include displayFlex("center");
+//     // @include centralizarPosition;
+// }
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: $colorBackground2;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: $colorBackground1;
+    border-radius: 50px;
+}
+
+
+header{
+    @include centralizarPosition;
+
+    @include displayFlex("center");
+    flex-direction: column;
+    gap: 2em;
+
+    h1{
+        span:nth-child(1){
+            margin-right: 10px;
+            line-height: .7em;
+            font-size: 150px;
+            color: $color5;
+            text-shadow: 0px 4px 0px $color6;
+
+            @include tamanho("celular"){
+                font-size: 100px;
+            }
+            
+        }
+
+        span:nth-child(2){
+            line-height: .7em;
+            font-size: 80px;
+            color: $color5;
+            text-shadow: 0px 4px 0px $color6;
+
+            @include tamanho("celular"){
+                font-size: 53px;
+            }
+        }
+
+        span:nth-child(3){
+            display: block;
+            line-height: .7em;
+            font-size: 207px;
+            color: $color5;
+            text-shadow: 0px 4px 0px $color6;
+
+            @include tamanho("celular"){
+                font-size: 138px;
+            }
+        }
+    }
+
+    a{
+        padding: 10px 5px;
+        width: min(100%, 430px);
+        font-size: 40px;
+        text-align: center;
+        color: $color4;
+        text-shadow: 0px 4px 0px $color7;
+    
+        background-color: $color5;
+        border-radius: 20px;
+        transition: .5s all;
+        
+        &:hover{
+            box-shadow: -2px 5px 0px $color6;
+            transform: translate(0px, -4px);      
+        }
+
+        @include tamanho("celular"){
+            font-size: 26px;
+            width: min(100%, 286px);
+            border-radius: 13px;
+        }
+    }
+}

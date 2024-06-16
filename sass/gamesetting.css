@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+* {
+  font-family: "Luckiest Guy", cursive;
+  text-decoration: none;
+  font-weight: 400;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #8F00FF;
+  background: linear-gradient(180deg, #8F00FF 0%, #3C006B 100%);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 88vh;
+  margin: 0;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #8F00FF;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3C006B;
+  border-radius: 50px;
+}
+
+.alertButton {
+  position: absolute;
+  top: -26px;
+  width: min(100%, 430px);
+  margin: 0 auto;
+  padding: 5px;
+  animation-name: animation1;
+  animation-duration: 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  background-color: #E02D5C;
+  border-radius: 15px;
+}
+@keyframes animation1 {
+  0% {
+    background-color: rgba(224, 45, 93, 0);
+    width: 230px;
+  }
+  100% {
+    background-color: #E02D5C;
+    width: min(100%, 430px);
+    @media (max-width: 490px) {
+      .alertButton {
+        width: min(100%, 286px);
+      }
+    }
+  }
+}
+@media (max-width: 490px) {
+  @keyframes animation1 {
+    0% {
+      background-color: rgba(224, 45, 93, 0);
+      width: 230px;
+    }
+    100% {
+      background-color: #E02D5C;
+      width: min(100%, 286px);
+    }
+  }
+}
+@media (max-width: 490px) {
+  .alertButton {
+    width: min(100%, 286px);
+    top: -15px;
+    border-radius: 10px;
+    padding: 3.3px;
+  }
+}
+.alertButton img.alertImg {
+  animation-name: animation3;
+  animation-duration: 1s;
+}
+@keyframes animation3 {
+  0% {
+    display: block;
+    opacity: 0%;
+  }
+  80% {
+    display: block;
+    opacity: 0%;
+  }
+  100% {
+    display: block;
+    opacity: 100%;
+  }
+}
+@media (max-width: 490px) {
+  .alertButton img.alertImg {
+    width: 20px;
+  }
+}
+.alertButton span.alertSpan {
+  color: white;
+  font-size: 20px;
+  animation-name: animation2;
+  animation-duration: 1s;
+}
+@keyframes animation2 {
+  0% {
+    display: none;
+    color: rgba(255, 255, 255, 0);
+  }
+  80% {
+    display: none;
+    color: rgba(255, 255, 255, 0);
+  }
+  100% {
+    display: block;
+    color: white;
+  }
+}
+@media (max-width: 490px) {
+  .alertButton span.alertSpan {
+    font-size: 13px;
+  }
+}
+
+.conteinerSetting {
+  position: relative;
+  max-width: 455px;
+  background-color: #3C006B;
+  padding: 20px;
+  border-radius: 60px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (max-width: 490px) {
+  .conteinerSetting {
+    border-radius: 40px;
+  }
+}
+.conteinerSetting h2 {
+  padding: 10px 0;
+  font-size: 27px;
+  text-align: center;
+  color: #FEC500;
+}
+@media (max-width: 490px) {
+  .conteinerSetting h2 {
+    font-size: 20px;
+  }
+}
+.conteinerSetting .profiles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8em;
+  margin-bottom: -20px;
+}
+@media (max-width: 490px) {
+  .conteinerSetting .profiles {
+    gap: 0.8em;
+  }
+}
+.conteinerSetting .profiles img {
+  width: min(100%, 130px);
+}
+@media (max-width: 490px) {
+  .conteinerSetting .profiles img {
+    width: min(100%, 86px);
+  }
+}
+.conteinerSetting .profiles .profile1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.conteinerSetting .profiles .profile1 span {
+  position: relative;
+  left: -52px;
+  top: -38px;
+  font-size: 40px;
+  color: #48FC28;
+}
+@media (max-width: 490px) {
+  .conteinerSetting .profiles .profile1 span {
+    font-size: 26px;
+    left: -34px;
+    top: -25px;
+  }
+}
+.conteinerSetting .profiles .profile2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.conteinerSetting .profiles .profile2 span {
+  position: relative;
+  left: 55px;
+  top: -38px;
+  font-size: 40px;
+  color: #30E1D9;
+}
+@media (max-width: 490px) {
+  .conteinerSetting .profiles .profile2 span {
+    font-size: 26px;
+    left: 40px;
+    top: -26px;
+  }
+}
+.conteinerSetting .inputNameX {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.conteinerSetting .inputNameX span {
+  font-size: 55px;
+  color: #48FC28;
+}
+@media (max-width: 490px) {
+  .conteinerSetting .inputNameX span {
+    font-size: 36px;
+  }
+}
+.conteinerSetting .inputNameX input {
+  width: min(100%, 180px);
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 30px;
+  color: #8F00FF;
+}
+.conteinerSetting .inputNameX input::placeholder {
+  color: #CACACA;
+}
+@media (max-width: 490px) {
+  .conteinerSetting .inputNameX input {
+    font-size: 20px;
+    border-radius: 7px;
+  }
+}
+.conteinerSetting .inputNameO {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.conteinerSetting .inputNameO span {
+  font-size: 55px;
+  color: #30E1D9;
+}
+@media (max-width: 490px) {
+  .conteinerSetting .inputNameO span {
+    font-size: 36px;
+  }
+}
+.conteinerSetting .inputNameO input {
+  width: min(100%, 180px);
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 30px;
+  color: #8F00FF;
+}
+.conteinerSetting .inputNameO input::placeholder {
+  color: #CACACA;
+}
+@media (max-width: 490px) {
+  .conteinerSetting .inputNameO input {
+    font-size: 20px;
+    border-radius: 7px;
+  }
+}
+.conteinerSetting .rounds {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: min(100%, 340px);
+  background-color: #8F00FF;
+  padding: 10px;
+  border-radius: 15px;
+  gap: 0.7em;
+}
+@media (max-width: 490px) {
+  .conteinerSetting .rounds {
+    width: min(100%, 244px);
+  }
+}
+.conteinerSetting .rounds .checkClick {
+  background-color: #FEC500;
+  color: #3C006B;
+  transition: 0.5s all;
+}
+.conteinerSetting .rounds .checkClick:hover {
+  box-shadow: -2px 5px 0px #3C006B;
+  transform: translate(0px, -4px);
+}
+.conteinerSetting .rounds button {
+  flex: 1;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 33px;
+  color: white;
+  background-color: #3C006B;
+  transition: 0.5s all;
+}
+.conteinerSetting .rounds button:hover {
+  box-shadow: -2px 5px 0px #FEC500;
+  transform: translate(0px, -4px);
+}
+@media (max-width: 490px) {
+  .conteinerSetting .rounds button {
+    font-size: 22px;
+    border-radius: 7px;
+  }
+}
+.conteinerSetting a {
+  margin: 20px 0 0;
+  width: min(100%, 150px);
+  background-color: #8F00FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: 0.5s all;
+}
+.conteinerSetting a:hover {
+  box-shadow: -2px 5px 0px #FEC500;
+  transform: translate(0px, -4px);
+}
+@media (max-width: 490px) {
+  .conteinerSetting a {
+    width: min(100%, 100px);
+    border-radius: 13px;
+  }
+}
+.conteinerSetting a img {
+  width: min(100%, 50px);
+}
+
+/*# sourceMappingURL=gamesetting.css.map */

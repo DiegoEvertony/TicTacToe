@@ -1,0 +1,156 @@
+//Reset
+
+@mixin reset{
+    font-family: $fontePrincipal;
+    text-decoration: none;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+//#Fonte
+
+$fontePrincipal: "Luckiest Guy", cursive;
+
+//Centralização
+
+@mixin centralizarPosition{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+
+}
+
+
+@mixin centralizarPosition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+    margin: 0;
+}
+
+//#Cores
+
+//Cores Pincipais
+$color1: #48FC28;
+$color2: #30E1D9;
+$color3: #D39BFF;
+$color4: #ffff;
+$color5: #FEC500;
+$color6: #E16300;
+$color7: #CACACA;
+
+//Cor para Backgrounds
+$colorBackground1: #3C006B;
+$colorBackground2: #8F00FF;
+
+//#Mixins
+
+//display flex
+@mixin displayFlex($espaco: 0){
+    display: flex;
+    align-items: center;
+
+    @if $espaco == "between"{
+        justify-content: space-between;
+    }@else if $espaco == "center"{
+        justify-content: center;
+    };
+}
+
+//responsividade
+@mixin tamanho($dimesao){
+    @if $dimesao == "tablet"{
+        @media (max-width: 800px){
+            @content;
+        }
+    }@else if $dimesao == "tablet/cel"{
+        @media (max-width: 600px){
+            @content;
+        }
+    }@else if $dimesao == "celular"{
+        @media (max-width: 490px){
+            @content;
+        }
+    }
+}
+
+
+//Animações
+@mixin animation1(){
+    @keyframes animation1{
+        0%{
+            background-color: #e02d5d00;   
+            width: 230px;
+        }
+    
+        100%{
+            background-color: #E02D5C;
+            width: min(100%, 430px);
+
+            @include tamanho("celular"){
+                width: min(100%, 286px);
+            }
+        }
+    }
+
+    @include tamanho("celular"){
+        @keyframes animation1{
+            0%{
+                background-color: #e02d5d00;   
+                width: 230px;
+            }
+        
+            100%{
+                background-color: #E02D5C;
+                width: min(100%, 286px);
+            }
+        }
+    }
+}
+
+@mixin animation2(){
+    @keyframes animation2{
+        0%{
+            display: none;
+            color: rgba(255, 255, 255, 0);
+        }
+    
+        80%{
+            display: none;
+            color: rgba(255, 255, 255, 0);
+        }
+    
+        100%{
+            display: block;
+            color: white;
+        }
+    }
+}
+
+@mixin animation3(){
+    @keyframes animation3{
+        0%{
+            display: block;
+            opacity: 0%;
+        }
+    
+        80%{
+            display: block;
+            opacity: 0%;
+        }
+    
+        100%{
+            display: block;
+            opacity: 100%;
+    
+        }
+    }  
+}
+
+

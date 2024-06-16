@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+*{
+    @include reset;
+}
+
+body {
+    background: $colorBackground2;
+    background: linear-gradient(180deg, $colorBackground2 0%, $colorBackground1 100%);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 40px;
+    @include centralizarPosition;
+}
+
+// body {
+//     background: $colorBackground2;
+//     background: linear-gradient(180deg, $colorBackground2 0%, $colorBackground1 100%);
+//     background-position: center center;
+//     background-attachment: fixed;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     padding: 40px;
+//     // @include displayFlex("center");
+//     // @include centralizarPosition;
+// }
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: $colorBackground2;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: $colorBackground1;
+    border-radius: 50px;
+}
+
+// .tableTicTacToe{
+//     @include centralizarPosition;
+
+// }
+
+#container {
+    background-color: $colorBackground1;
+    box-shadow: 2px 2px 6px #00000026;
+    border-radius: 40px;
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+
+    @include displayFlex("center");
+    flex-direction: column;
+
+    @include tamanho("celular"){
+        width: 266px;
+        height: 266px;
+        border-radius: 23px;
+    }
+
+    
+// position: absolute;
+// top: 50%;
+// left: 50%;
+// transform: translate(-50%, -50%);
+
+    .break {
+        display: flex;
+    }
+
+    .box {
+        background-color: $colorBackground2;
+        border-radius: 25px;
+        height: 115px;
+        width: 115px;
+        margin: 5px;
+
+        @include displayFlex("center");
+
+        @include tamanho("celular"){
+            width: 77px;
+            height: 77px;
+            border-radius: 17px;
+            margin: 3.3px;
+        }
+
+        span.o{
+            @include tamanho("celular"){
+                color: gray;
+            }
+        }
+    }
+}
+
+//placar esta escondido
+.placarHidden {
+    display: none;
+}
+
+//   .placar {
+//     padding: 30px 0 20px;
+
+//     display: flex;
+//     justify-content: center;
+//     gap: 1.5em;
+//   }
+
+.persons {
+    margin-bottom: 20px;
+
+    @include displayFlex("center");
+    gap: 1em;
+
+    @include tamanho("celular"){
+        gap: .5em;
+    }
+
+    .person1 {
+            background-color: $colorBackground1;
+            box-shadow: 2px 2px 6px #00000026;
+            border-radius: 40px;
+        
+            width: min(100%, 192px);
+            padding: 53px 0 20px;
+            position: relative;
+        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include tamanho("celular"){
+                width: min(100%, 128px);
+                padding: 35px 0 13px;
+                border-radius: 26px;
+                margin: 3.3px;
+            }
+    
+        img{
+            width: 70px; 
+            position: absolute;
+            top: -28px;
+
+            @include tamanho("celular"){
+                width: 46px;
+                top: -18px;
+            }
+        }
+    
+        .name span{
+            color: $color4;
+            font-size: 18px;
+
+            @include tamanho("celular"){
+                font-size: 12px;
+            }
+        }
+    
+        .pontosX{
+            background-color: $colorBackground2;
+            border-radius: 25px;
+            margin-top: 10px;
+            width: 112px;
+        
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: .1em;
+
+            @include tamanho("celular"){
+                border-radius: 16px;
+                margin-top: 7px;
+                width: 75px;
+            }
+        }
+    
+    
+        .pontosX span{
+            font-size: 65px;
+            font-weight: 400;
+            color: $color1;
+
+            @include tamanho("celular"){
+                font-size: 43px;
+            }
+        }
+    
+        .pontosX span:nth-of-type(2){
+            font-size: 20px;
+            font-weight: 400;
+            color: $color3;
+
+            @include tamanho("celular"){
+                font-size: 18px;
+            }
+        }
+    }
+    
+    .person2 {
+        background-color: $colorBackground1;
+        box-shadow: 2px 2px 6px #00000026;
+        border-radius: 40px;
+
+        padding: 53px 0 20px;
+        width: 192px;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include tamanho("celular"){
+            width: min(100%, 128px);
+            padding: 35px 0 13px;
+            border-radius: 26px;
+            margin: 3.3px;
+        }
+
+        img{
+            width: 70px; 
+            position: absolute;
+            top: -28px;
+
+            @include tamanho("celular"){
+                width: 46px;
+                top: -18px;
+            }
+        }
+
+        .name span{
+            color: $color4;
+            font-size: 18px;
+
+            @include tamanho("celular"){
+                font-size: 12px;
+            }
+        }
+
+        .pontosO{
+            background-color: $colorBackground2;
+            border-radius: 25px;
+            margin-top: 10px;
+            width: 112px;
+
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: .1em;
+
+            @include tamanho("celular"){
+                border-radius: 16px;
+                margin-top: 7px;
+                width: 75px;
+            }
+        }
+
+
+        .pontosO span{
+            font-size: 65px;
+            font-weight: 400;
+            color: $color2;
+
+            @include tamanho("celular"){
+                font-size: 43px;
+            }
+
+        }
+
+        .pontosO span:nth-of-type(2){
+            font-size: 20px;
+            font-weight: 400;
+            color: $color3;
+
+            @include tamanho("celular"){
+                font-size: 18px;
+            }
+        }
+    }  
+}
+
+.conteinerWinner{
+    @include displayFlex("center");
+    flex-direction: column;
+    background-color: $colorBackground1;
+    background-image: url(../assets/images/fundo\ background\ winner.png);
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 680px;
+    padding: 20px 10px;
+    border-radius: 80px;
+    margin: 0 20px;
+
+    @include tamanho("tablet"){
+        width: 400px;
+        border-radius: 53px;
+    }
+
+
+    @include tamanho("celular"){
+        border-radius: 53px;
+        width: 260px;
+        
+    }
+
+    .fotoWinner{
+        @include displayFlex("center");
+
+        img{
+            width: min(100%, 230px);
+    
+            @include tamanho("celular"){
+                width: min(100%, 153px);
+            }
+        }
+    }
+
+    .nomeWinner span{
+        font-size: 35px;
+        color: $color4;
+
+        @include tamanho("celular"){
+            font-size: 23px;
+        }
+    }
+
+    > span{
+        line-height: .9em;
+        font-size: 140px;
+        color: $color5;
+        text-shadow: 0px 4px 0px $color6;
+
+        @include tamanho("celular"){
+            font-size: 93px;
+        }
+    }
+
+    .botoes {
+        @include displayFlex("center");
+        gap: 1em;
+        margin: 8px 0;
+
+        @include tamanho("celular"){
+            gap: .5em;
+        }
+
+        a {
+            @include displayFlex("center");
+            padding: 10px 20px;
+            width: 140px;
+        
+            background-color: $colorBackground2;
+            border-radius: 27px;
+            border: none;
+            transition: .5s all;
+        
+            &:hover{
+                box-shadow: -2px 5px 0px $color5;
+                transform: translate(0px, -4px);      
+            }
+
+            @include tamanho("tablet"){
+                width: 110px;
+                height: 65px;
+                border-radius: 25px;
+            }
+
+            @include tamanho("celular"){
+                width: 63px;
+                height: 40px;
+                border-radius: 18px;
+            }
+        }
+
+        a.home img{
+            @include tamanho("tablet"){
+                width: 58px;
+                
+            }
+
+            @include tamanho("celular"){
+                width: 40px;
+            }
+        }
+
+        a.reset img{
+            @include tamanho("tablet"){
+                width: 55px;
+            }
+
+            @include tamanho("celular"){
+                width: 37px;
+            }
+        }
+    }
+}
+
+.boxWinner{
+    display: none;
+}
+
+
+/* .x{
+    font-size: 38px;
+    font-weight: 600;
+    color: #ff0000;
+    display: none;
+}
+
+.o{
+    font-size: 38px;
+    font-weight: 600;
+    color: #004db1;
+    display: none;
+} */
+
+/*# sourceMappingURL=geral.css.map */

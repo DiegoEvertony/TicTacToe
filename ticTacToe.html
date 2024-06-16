@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sass/tictactoe.css">
+    <title>Tic Tac Toe - Game</title>
+</head>
+<body>
+    <div class="tableTicTacToe">
+        <div class="persons">
+            <div class="person1">
+                <img src="assets/images/avatar_01.svg" alt="">
+                <div class="name">
+                    <span id="displayNameX">Player 1</span>
+                </div>
+                <div class="pontosX">
+                    <span>X</span>
+                </div>
+            </div>
+            <div class="person2">
+                <img src="assets/images/avatar_02.svg" alt="">
+                <div class="name">
+                    <span id="displayNameO">Player 2</span>
+                </div>
+                <div class="pontosO">
+                    <span>O</span>
+                </div>
+            </div>
+        </div>
+        <div class="bloco">
+            <div id="container">
+                <div class="break">
+                    <div class="box" id="block-1"></div>
+                    <div class="box" id="block-2"></div>
+                    <div class="box" id="block-3"></div>
+                </div>
+        
+                <div class="break">
+                    <div class="box" id="block-4"></div>
+                    <div class="box" id="block-5"></div>
+                    <div class="box" id="block-6"></div>
+                </div>
+        
+                <div class="break">
+                    <div class="box" id="block-7"></div>
+                    <div class="box" id="block-8"></div>
+                    <div class="box" id="block-9"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="boxWinner">
+        <div class="conteinerWinner">
+            <div class="fotoWinner">
+                <img src="assets/images/avatar_01.svg" alt="">
+            </div>
+            <div class="nomeWinner">
+                <span>player 1</span>
+                <!-- <span>xxxxxxxxxxxx</span>  <- receber ate 12 caracteres-->
+            </div>
+            <span>
+                win!
+            </span>
+            <div class="botoes">       
+                <a class="home" href="newGame.html" target="_self">         
+                    <img src="assets/images/seta home.svg" width="80px" alt="">        
+                </a>
+            
+                <a class="reset">
+                    <img src="assets/images/seta reset.svg" width="74px" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+<script type="module" src="js/script.js"></script>
+</body>
+</html>

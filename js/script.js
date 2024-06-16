@@ -1,0 +1,403 @@
+let nameX = "Player 1";
+let nameO = "Player 2";
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const displayNameX = document.querySelector("span#displayNameX");
+    const displayNameO = document.querySelector("span#displayNameO");
+
+    const storedValue1 = localStorage.getItem("inputValue1");
+    const storedValue2 = localStorage.getItem("inputValue2");
+
+    nameX = obterNameX();
+    nameO = obterNameO();
+
+
+    if (storedValue1) {
+        //aqui vai substituir o player 1 pelo nome escolhido
+        displayNameX.textContent = `${storedValue1}`;
+    }
+    if(storedValue2){
+        displayNameO.textContent = `${storedValue2}`;
+    }
+
+    
+});
+
+console.log(nameX);
+
+
+function obterNameX(){
+    return localStorage.getItem("inputValue1");
+}
+
+function obterNameO(){
+    return localStorage.getItem("inputValue2");
+}
+
+
+
+
+let box = document.querySelectorAll(".box");
+let checkPlacarX = 0;
+let pontoPlacarX = 0;
+let pontoPlacarO = 0;
+let verifReiniciar = 0;
+let reseteVerif = 0;
+let checkVez = 0;
+let verifReset;
+let verif;
+
+
+
+//Fazer evento para receber elementos
+for(let cont = 0; cont < box.length; cont++){
+    box[cont].addEventListener("click", () =>{
+
+        let x = marcaX();
+        let o = marcaO();
+
+        //alternar entre X e O 
+        if(checkVez == 0){
+            box[cont].appendChild(x);
+            checkVez = 1;
+        }else if(checkVez == 1){
+            box[cont].appendChild(o);
+            checkVez = 0;
+        }
+
+        //fazer com que cada bloco so receba 1 elemento
+        // - bloqueia a div box para que ela so receba um span
+        let boxQt = box[cont].childNodes; // <- quantidade de elementos que tem dentro do box
+        if(boxQt.length > 1){
+            if(checkVez == 0){
+            box[cont].removeChild(o);
+            checkVez = 1;
+            }else if(checkVez == 1){
+            box[cont].removeChild(x);
+            checkVez = 0;
+            }
+        }
+
+        /*
+        - Verificação de qual angulo ganhou.
+        - É verificar se quem ganhou foi X ou O.
+ 
+        Fazer um loop para verificar cada função, se alguma função for true não executará a função empate, caso contrario, se nenhum for true executar a função empate.
+        */
+            
+        verificarQuemGanhou();
+        // console.log(box[cont].childNodes[0]);
+
+    })
+}
+
+
+
+/*
+FUNÇÃO: verificar quem ganhou se foi X ou O ou se deu EMPATE
+*/
+
+//ESTA PARTE ESTA EM MANUTENÇÃO...
+function verificarQuemGanhou(){
+    let bloco = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ]; 
+    // console.log(possibilidade[0][1]);
+    
+    for(let i = 0; i < bloco.length; i++){
+        //Em cada loop o verif zera e fica false.
+        verif = false;
+
+        //Se 2 resultados do array BLOCO for correto, aceite somente 1 resultado.
+        if(box[bloco[i][0]].childNodes.length > 0 && box[bloco[i][1]].childNodes.length > 0 && box[bloco[i][2]].childNodes.length > 0){
+            let b1Child = box[bloco[i][0]].childNodes[0].className;
+            let b2Child = box[bloco[i][1]].childNodes[0].className;
+            let b3Child = box[bloco[i][2]].childNodes[0].className;
+
+            if(b1Child == "x" && b2Child == "x" && b3Child == "x"){
+                //x
+
+                //EM MANUTENÇÃO...
+                //aqui se tiver 2 valores corretos, sera removido 1 deles.
+                //obs: ele vai remove tambem aquela que tiver so 1 correto tambem.
+                for(let i = 0; i < bloco.length; i++){
+                    for(let j = 0; j < bloco.length; j++){
+                        if(bloco[i]){
+                            let posicao = bloco.indexOf(bloco[i]);
+                            if(posicao > -1){
+                                //aqui vai remover o elemento do array BLOCO correto.
+                                bloco.splice(posicao, 1);
+                            }
+                            
+                            if(bloco[i] == bloco[j]){
+                                let posicao = bloco.indexOf(bloco[j]);
+                                if(posicao > -1){
+                                    
+                                    bloco.splice(posicao, 1);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                console.log(bloco);
+                verif = true;
+                console.log("x ganhou");
+                // console.log("Parabens voce ganhou agora é a vez do O");
+                pontosPlacar("x");
+                reiniciarJogo();     
+
+                              
+            }else if(b1Child == "o" && b2Child == "o" && b3Child == "o"){
+                //o
+
+                //EM MANUTENÇÃO...
+                //aqui se tiver 2 valores corretos, sera removido 1 deles.
+                //obs: ele vai remove tambem aquela que tiver so 1 correto tambem.
+                for(let i = 0; i < bloco.length; i++){
+                    for(let j = 0; j < bloco.length; j++){
+                        if(bloco[i]){
+                            let posicao = bloco.indexOf(bloco[i]);
+                            if(posicao > -1){
+                                //aqui vai remover o elemento do array BLOCO correto.
+                                bloco.splice(posicao, 1);
+                            }
+                            
+                            if(bloco[i] == bloco[j]){
+                                let posicao = bloco.indexOf(bloco[j]);
+                                if(posicao > -1){
+                                    
+                                    bloco.splice(posicao, 1);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                verif = true;
+                console.log("o ganhou");
+                // console.log("Parabens voce ganhou agora é a vez do X");
+                pontosPlacar("o");
+                reiniciarJogo();       
+            }
+        } 
+    }
+
+    console.log(verif);
+
+    //Resolver o problema de quando completa todos os box ele da empate mesmo quando ganha.
+    //FUNÇÃO EMPATE para caso nenhuma verificação acima de certo.
+    //caso X ou O ganhar a função deuEmpate não vai ativar,por conta do VERIF.
+    
+    if(verif == false){
+        deuEmpate();
+    }
+        
+}
+
+//Fazer uma função para fazer a marcação no PLACAR
+//EM MANUTENÇÃO...
+
+// Variáveis globais
+// Seleciona os spans existentes para os pontos X e O
+let placarX = document.querySelector(".pontosX");
+let placarO = document.querySelector(".pontosO");
+let pontosX = document.createElement("span");
+let pontosO = document.createElement("span");
+
+//Variáveis do winner
+let tableTicTacToe  = document.querySelector(".tableTicTacToe");
+let boxWinner  = document.querySelector(".boxWinner");
+
+// Inicializa os spans com o valor zero
+pontosX.innerHTML = pontoPlacarX;
+pontosO.innerHTML = pontoPlacarO;
+placarX.appendChild(pontosX);
+placarO.appendChild(pontosO);
+
+let pegarRounds;
+
+document.addEventListener("DOMContentLoaded", () => {
+    // const resultado = document.getElementById("resultado");
+    pegarRounds = obterRounds();
+
+    // if (pegarRounds) {
+    //     resultado.textContent = `rounds: ${pegarRounds}`;
+    // }
+
+    // Chame qualquer função que depende de pegarRounds aqui
+    iniciarJogo();
+});
+
+function obterRounds() {
+    return localStorage.getItem("rounds");
+}
+
+function iniciarJogo() {
+    console.log(pegarRounds);
+    
+    // Aqui você pode iniciar seu jogo e usar pegarRounds conforme necessário
+    // Exemplo:
+    // pontosPlacar("x");
+    // pontosPlacar("o");
+}
+
+function pontosPlacar(resultado) {
+    if (resultado == "x") {
+        pontoPlacarX++;
+        pontosX.innerHTML = pontoPlacarX;
+
+        if (pontoPlacarX == 1 && verifReset == 0) {
+            console.log("placarX");
+            verifReset = 1; // Prevenir execução repetida desnecessária
+        }
+
+        console.log("Placar X: " + pontoPlacarX);
+
+    } else if (resultado == "o") {
+        pontoPlacarO++;
+        pontosO.innerHTML = pontoPlacarO;
+
+        if (pontoPlacarO == 1 && verifReset == 0) {
+            console.log("placarO");
+            verifReset = 1; // Prevenir execução repetida desnecessária
+        }
+
+        console.log("Placar O: " + pontoPlacarO);
+    }
+
+    let winnerName = document.querySelector(".nomeWinner span");
+    let perfilWinner = document.querySelector(".fotoWinner img")
+    // Inicializar evento de reinício de jogo
+    // Aqui vai mostrar quem foi o vencedor
+    // Decide quantos rounds serão necessários:
+    if (pontoPlacarX == pegarRounds || pontoPlacarO == pegarRounds) {
+        tableTicTacToe.style.display = "none";
+        boxWinner.style.display = "block";
+        if(pontoPlacarX == pegarRounds){
+            perfilWinner.setAttribute("src", "assets/images/avatar_01.svg");
+            if(nameX == ""){
+                winnerName.innerHTML = `Player 1`;
+            }else{
+                winnerName.textContent = `${nameX}`;
+            }
+        }else if(pontoPlacarO == pegarRounds){
+            perfilWinner.setAttribute("src", "assets/images/avatar_02.svg");
+            if(nameO == ""){
+                winnerName.innerHTML = `Player 2`;
+            }else{
+                winnerName.textContent = `${nameO}`;
+            }
+        }
+
+        recomecarJogo();
+    }
+}
+
+
+
+
+
+
+
+function recomecarJogo() {
+    let botao = document.querySelector(".botoes a.reset");
+    
+    botao.addEventListener("click", () => {
+        pontoPlacarX = 0;
+        pontoPlacarO = 0;
+        verifReset = 0;
+
+        pontosX.innerHTML = pontoPlacarX;
+        pontosO.innerHTML = pontoPlacarO;
+
+        tableTicTacToe.style.display = "block";
+        boxWinner.style.display = "none";
+
+        console.log("Jogo reiniciado");
+        console.log(nameX);
+
+
+        reiniciarJogo();
+    });
+}
+
+
+//FUNÇÃO: Verificar se deu EMPATE
+function deuEmpate(){
+    let contEmpate = 0;
+    //vai percorrer por todo o VETOR box
+    for(let cont = 0; cont < box.length; cont++){
+        if(box[cont].childNodes[0] != undefined){
+            contEmpate++;  
+        }
+    }
+    
+    if(contEmpate == 9){
+        console.log("deu empate");
+        reiniciarJogo();  
+    }       
+}
+
+//FUNÇÃO: apagar todos os dados do jogo, exceto o placar.
+function reiniciarJogo(){
+    //temporizador que da um tempo ate apagar.
+    setTimeout(() =>{
+        for(let cont = 0; cont < box.length; cont++){
+            //aqui vai substituir todos os dados dos BOXs por vazio.
+            box[cont].innerText = "";
+        }     
+    }, 200);
+}
+
+
+//FUNÇÃO: fazer elemento X
+function marcaX(){
+    let span = document.createElement("span");
+    let texto = document.createTextNode("X");
+    span.appendChild(texto);
+    span.classList.add("x");
+
+    //redimeniona o elemento span quando atinge o limite do width
+    if(window.matchMedia("(max-width: 490px)").matches){
+        span.style.fontSize = "70px";
+    }else{
+        span.style.fontSize = "100px";
+    }
+
+    // span.style.fontSize = "80px";
+
+    
+    span.style.color = "#48FC28";
+    return span;
+}
+
+//FUNÇÃO: fazer elemento O
+function marcaO(){
+    let span = document.createElement("span");
+    let texto = document.createTextNode("O");
+    span.appendChild(texto);
+    span.classList.add("o");
+
+    //redimeniona o elemento span quando atinge o limite do width
+    if(window.matchMedia("(max-width: 490px)").matches){
+        span.style.fontSize = "70px";
+    }else{
+        span.style.fontSize = "100px";
+    }
+
+    
+    span.style.color = "#30E1D9";
+    return span;
+}
+
+
+
