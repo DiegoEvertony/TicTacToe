@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+/* ----- RESET ----- */
 * {
   font-family: "Luckiest Guy", cursive;
   text-decoration: none;
@@ -9,6 +10,7 @@
   margin: 0;
 }
 
+/* ----- BODY ----- */
 body {
   background: #8F00FF;
   background: linear-gradient(180deg, #8F00FF 0%, #3C006B 100%);
@@ -25,7 +27,7 @@ body {
   margin: 0;
 }
 
-/* SCROLLBAR */
+/* ----- SCROLLBAR ----- */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -39,6 +41,7 @@ body {
   border-radius: 50px;
 }
 
+/* ----- ALERT ----- */
 .alertButton {
   position: absolute;
   top: -26px;
@@ -138,6 +141,7 @@ body {
   }
 }
 
+/* ----- CONTEINER ----- */
 .conteinerSetting {
   position: relative;
   max-width: 455px;

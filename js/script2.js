@@ -1,4 +1,3 @@
-
 //Marca em que botão clicou
 const botoes = document.querySelectorAll('.botao'); // Seleciona todos os botões
 let botaoClicado = false;
@@ -18,16 +17,11 @@ function ativarBotao(botaoClicado) {
     botaoClicado.classList.add('checkClick'); // Adiciona a classe 'checkClick' ao botão clicado
 }
 
-
 //Mostra quando não foi selecionado nenhum botão do ROUNDS/POINTS
 const buttonNext = document.querySelector('.buttonNext');
 let attencion = document.querySelector(".alertButton");
-// let attencionImg = document.querySelector(".alertButton img");
-// let attencionSpan = document.querySelector(".alertButton span");
 
 attencion.style.display = "none";
-// attencionImg.style.display = "none";
-// attencionSpan.style.display = "none";
 
 buttonNext.addEventListener('click', (event) => {
     if (!botaoClicado) { // Se nenhum botão foi clicado
@@ -35,20 +29,13 @@ buttonNext.addEventListener('click', (event) => {
 
         setTimeout(() => {
             attencion.style.display = "flex";
-            // attencionImg.style.display = "block";
-            // attencionSpan.style.display = "block";
         }, 500);
 
         setTimeout(() => {
             attencion.style.display = "none";
-            // attencion.classList.toggle("alertButton");
         }, 5000);
-
-        // alert('Por favor, clique em um dos botões POINTS antes de continuar.');
     }
 });
-
-
 
 //Captura o valor do botao em que clicou e salva no localStorage
 document.addEventListener("DOMContentLoaded", () => {
@@ -61,8 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
-
 
 //captura os valores dos imputs e salva no localStorage
 document.addEventListener("DOMContentLoaded", () => {

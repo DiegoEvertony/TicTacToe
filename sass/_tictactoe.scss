@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+/* ----- RESET ----- */
 
 *{
     @include reset;
 }
+
+/* ----- BODY ----- */
 
 body {
     background: $colorBackground2;
@@ -16,19 +18,7 @@ body {
     @include centralizarPosition;
 }
 
-// body {
-//     background: $colorBackground2;
-//     background: linear-gradient(180deg, $colorBackground2 0%, $colorBackground1 100%);
-//     background-position: center center;
-//     background-attachment: fixed;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     padding: 40px;
-//     // @include displayFlex("center");
-//     // @include centralizarPosition;
-// }
-
-/* SCROLLBAR */
+/* ----- SCROLLBAR ----- */
 
 ::-webkit-scrollbar{
     width: 10px;
@@ -43,10 +33,7 @@ body {
     border-radius: 50px;
 }
 
-// .tableTicTacToe{
-//     @include centralizarPosition;
-
-// }
+/* ----- CONTEINER ----- */
 
 #container {
     background-color: $colorBackground1;
@@ -64,12 +51,6 @@ body {
         height: 266px;
         border-radius: 23px;
     }
-
-    
-// position: absolute;
-// top: 50%;
-// left: 50%;
-// transform: translate(-50%, -50%);
 
     .break {
         display: flex;
@@ -99,18 +80,7 @@ body {
     }
 }
 
-//placar esta escondido
-.placarHidden {
-    display: none;
-}
-
-//   .placar {
-//     padding: 30px 0 20px;
-
-//     display: flex;
-//     justify-content: center;
-//     gap: 1.5em;
-//   }
+/* ----- PLACAR ----- */
 
 .persons {
     margin-bottom: 20px;
@@ -284,11 +254,14 @@ body {
     }  
 }
 
+/* ----- CONTEINER WINNER ----- */
+
 .conteinerWinner{
     @include displayFlex("center");
     flex-direction: column;
     background-color: $colorBackground1;
     background-image: url(../assets/images/fundo\ background\ winner.png);
+    box-shadow: 2px 2px 6px #00000026;
     
     background-position: center center;
     background-repeat: no-repeat;
@@ -307,8 +280,7 @@ body {
 
     @include tamanho("celular"){
         border-radius: 53px;
-        width: 260px;
-        
+        width: 250px;    
     }
 
     .fotoWinner{
@@ -406,20 +378,3 @@ body {
 .boxWinner{
     display: none;
 }
-
-
-/* .x{
-    font-size: 38px;
-    font-weight: 600;
-    color: #ff0000;
-    display: none;
-}
-
-.o{
-    font-size: 38px;
-    font-weight: 600;
-    color: #004db1;
-    display: none;
-} */
-
-/*# sourceMappingURL=geral.css.map */

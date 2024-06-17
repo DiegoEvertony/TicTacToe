@@ -1,4 +1,4 @@
-//Reset
+//#Reset
 
 @mixin reset{
     font-family: $fontePrincipal;
@@ -14,17 +14,7 @@
 
 $fontePrincipal: "Luckiest Guy", cursive;
 
-//Centralização
-
-@mixin centralizarPosition{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-
-}
-
+//#Centralização
 
 @mixin centralizarPosition{
     display: flex;
@@ -63,7 +53,7 @@ $colorBackground2: #8F00FF;
     };
 }
 
-//responsividade
+//#responsividade
 @mixin tamanho($dimesao){
     @if $dimesao == "tablet"{
         @media (max-width: 800px){
@@ -81,7 +71,7 @@ $colorBackground2: #8F00FF;
 }
 
 
-//Animações
+//#Animações
 @mixin animation1(){
     @keyframes animation1{
         0%{

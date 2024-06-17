@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+/* ----- RESET ----- */
 * {
   font-family: "Luckiest Guy", cursive;
   text-decoration: none;
@@ -10,6 +10,7 @@
   margin: 0;
 }
 
+/* ----- BODY ----- */
 body {
   background: #8F00FF;
   background: linear-gradient(180deg, #8F00FF 0%, #3C006B 100%);
@@ -26,7 +27,7 @@ body {
   margin: 0;
 }
 
-/* SCROLLBAR */
+/* ----- SCROLLBAR ----- */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -40,6 +41,7 @@ body {
   border-radius: 50px;
 }
 
+/* ----- CONTEINER ----- */
 #container {
   background-color: #3C006B;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1490196078);
@@ -86,10 +88,7 @@ body {
   }
 }
 
-.placarHidden {
-  display: none;
-}
-
+/* ----- PLACAR ----- */
 .persons {
   margin-bottom: 20px;
   display: flex;
@@ -255,6 +254,7 @@ body {
   }
 }
 
+/* ----- CONTEINER WINNER ----- */
 .conteinerWinner {
   display: flex;
   align-items: center;
@@ -262,6 +262,7 @@ body {
   flex-direction: column;
   background-color: #3C006B;
   background-image: url(../assets/images/fundo\ background\ winner.png);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1490196078);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -279,7 +280,7 @@ body {
 @media (max-width: 490px) {
   .conteinerWinner {
     border-radius: 53px;
-    width: 260px;
+    width: 250px;
   }
 }
 .conteinerWinner .fotoWinner {
@@ -380,20 +381,5 @@ body {
 .boxWinner {
   display: none;
 }
-
-/* .x{
-    font-size: 38px;
-    font-weight: 600;
-    color: #ff0000;
-    display: none;
-}
-
-.o{
-    font-size: 38px;
-    font-weight: 600;
-    color: #004db1;
-    display: none;
-} */
-
 
 /*# sourceMappingURL=tictactoe.css.map */

@@ -1,6 +1,10 @@
+/* ----- RESET ----- */
+
 *{
     @include reset;
 }
+
+/* ----- BODY ----- */
 
 body {
     background: $colorBackground2;
@@ -14,7 +18,8 @@ body {
     @include centralizarPosition;
 }
 
-/* SCROLLBAR */
+/* ----- SCROLLBAR ----- */
+
 ::-webkit-scrollbar{
     width: 10px;
 }
@@ -27,6 +32,8 @@ body {
     background-color: $colorBackground1;
     border-radius: 50px;
 }
+
+/* ----- ALERT ----- */
 
 .alertButton{
     position: absolute;
@@ -63,7 +70,6 @@ body {
     }
 
     span.alertSpan{
-        // transition: .9 all;
         color: white;
         font-size: 20px;
 
@@ -77,10 +83,9 @@ body {
     }
 }
 
-
+/* ----- CONTEINER ----- */
 
 .conteinerSetting{
-    // @include centralizarPosition;
     position: relative;
     max-width: 455px;
     background-color: $colorBackground1;

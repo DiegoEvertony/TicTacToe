@@ -1,6 +1,10 @@
+/* ----- RESET ----- */
+
 *{
     @include reset;
 }
+
+/* ----- BODY ----- */
 
 body {
     background: $colorBackground2;
@@ -9,24 +13,11 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0;
     padding: 40px;
-    // @include centralizarPosition;
+    margin: 0;
 }
 
-// body {
-//     background: $colorBackground2;
-//     background: linear-gradient(180deg, $colorBackground2 0%, $colorBackground1 100%);
-//     background-position: center center;
-//     background-attachment: fixed;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     padding: 40px;
-//     // @include displayFlex("center");
-//     // @include centralizarPosition;
-// }
-
-/* SCROLLBAR */
+/* ----- SCROLLBAR ----- */
 
 ::-webkit-scrollbar{
     width: 10px;
@@ -41,6 +32,7 @@ body {
     border-radius: 50px;
 }
 
+/* ----- HEADER ----- */
 
 header{
     @include centralizarPosition;
@@ -88,8 +80,8 @@ header{
     }
 
     a{
-        padding: 10px 5px;
         width: min(100%, 430px);
+        padding: 10px 5px;
         font-size: 40px;
         text-align: center;
         color: $color4;

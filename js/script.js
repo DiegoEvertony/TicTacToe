@@ -1,7 +1,7 @@
 let nameX = "Player 1";
 let nameO = "Player 2";
 
-
+//aqui vai pegar os valores dos inputs armazenados no localStorage
 document.addEventListener("DOMContentLoaded", () => {
     const displayNameX = document.querySelector("span#displayNameX");
     const displayNameO = document.querySelector("span#displayNameO");
@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     nameX = obterNameX();
     nameO = obterNameO();
 
-
     if (storedValue1) {
         //aqui vai substituir o player 1 pelo nome escolhido
         displayNameX.textContent = `${storedValue1}`;
@@ -21,11 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         displayNameO.textContent = `${storedValue2}`;
     }
 
-    
 });
-
-console.log(nameX);
-
 
 function obterNameX(){
     return localStorage.getItem("inputValue1");
@@ -35,9 +30,7 @@ function obterNameO(){
     return localStorage.getItem("inputValue2");
 }
 
-
-
-
+//variaveis globais
 let box = document.querySelectorAll(".box");
 let checkPlacarX = 0;
 let pontoPlacarX = 0;
@@ -47,8 +40,6 @@ let reseteVerif = 0;
 let checkVez = 0;
 let verifReset;
 let verif;
-
-
 
 //Fazer evento para receber elementos
 for(let cont = 0; cont < box.length; cont++){
@@ -82,23 +73,15 @@ for(let cont = 0; cont < box.length; cont++){
         /*
         - Verificação de qual angulo ganhou.
         - É verificar se quem ganhou foi X ou O.
- 
-        Fazer um loop para verificar cada função, se alguma função for true não executará a função empate, caso contrario, se nenhum for true executar a função empate.
         */
-            
         verificarQuemGanhou();
-        // console.log(box[cont].childNodes[0]);
-
     })
 }
-
-
 
 /*
 FUNÇÃO: verificar quem ganhou se foi X ou O ou se deu EMPATE
 */
 
-//ESTA PARTE ESTA EM MANUTENÇÃO...
 function verificarQuemGanhou(){
     let bloco = [
         [0, 1, 2],
@@ -110,7 +93,6 @@ function verificarQuemGanhou(){
         [0, 4, 8],
         [2, 4, 6]
     ]; 
-    // console.log(possibilidade[0][1]);
     
     for(let i = 0; i < bloco.length; i++){
         //Em cada loop o verif zera e fica false.
@@ -125,7 +107,6 @@ function verificarQuemGanhou(){
             if(b1Child == "x" && b2Child == "x" && b3Child == "x"){
                 //x
 
-                //EM MANUTENÇÃO...
                 //aqui se tiver 2 valores corretos, sera removido 1 deles.
                 //obs: ele vai remove tambem aquela que tiver so 1 correto tambem.
                 for(let i = 0; i < bloco.length; i++){
@@ -148,18 +129,13 @@ function verificarQuemGanhou(){
                     }
                 }
 
-                console.log(bloco);
                 verif = true;
-                console.log("x ganhou");
-                // console.log("Parabens voce ganhou agora é a vez do O");
                 pontosPlacar("x");
                 reiniciarJogo();     
-
                               
             }else if(b1Child == "o" && b2Child == "o" && b3Child == "o"){
                 //o
 
-                //EM MANUTENÇÃO...
                 //aqui se tiver 2 valores corretos, sera removido 1 deles.
                 //obs: ele vai remove tambem aquela que tiver so 1 correto tambem.
                 for(let i = 0; i < bloco.length; i++){
@@ -183,28 +159,19 @@ function verificarQuemGanhou(){
                 }
 
                 verif = true;
-                console.log("o ganhou");
-                // console.log("Parabens voce ganhou agora é a vez do X");
                 pontosPlacar("o");
                 reiniciarJogo();       
             }
         } 
     }
 
-    console.log(verif);
-
-    //Resolver o problema de quando completa todos os box ele da empate mesmo quando ganha.
     //FUNÇÃO EMPATE para caso nenhuma verificação acima de certo.
     //caso X ou O ganhar a função deuEmpate não vai ativar,por conta do VERIF.
     
     if(verif == false){
         deuEmpate();
     }
-        
 }
-
-//Fazer uma função para fazer a marcação no PLACAR
-//EM MANUTENÇÃO...
 
 // Variáveis globais
 // Seleciona os spans existentes para os pontos X e O
@@ -226,28 +193,11 @@ placarO.appendChild(pontosO);
 let pegarRounds;
 
 document.addEventListener("DOMContentLoaded", () => {
-    // const resultado = document.getElementById("resultado");
     pegarRounds = obterRounds();
-
-    // if (pegarRounds) {
-    //     resultado.textContent = `rounds: ${pegarRounds}`;
-    // }
-
-    // Chame qualquer função que depende de pegarRounds aqui
-    iniciarJogo();
 });
 
 function obterRounds() {
     return localStorage.getItem("rounds");
-}
-
-function iniciarJogo() {
-    console.log(pegarRounds);
-    
-    // Aqui você pode iniciar seu jogo e usar pegarRounds conforme necessário
-    // Exemplo:
-    // pontosPlacar("x");
-    // pontosPlacar("o");
 }
 
 function pontosPlacar(resultado) {
@@ -256,26 +206,21 @@ function pontosPlacar(resultado) {
         pontosX.innerHTML = pontoPlacarX;
 
         if (pontoPlacarX == 1 && verifReset == 0) {
-            console.log("placarX");
             verifReset = 1; // Prevenir execução repetida desnecessária
         }
-
-        console.log("Placar X: " + pontoPlacarX);
 
     } else if (resultado == "o") {
         pontoPlacarO++;
         pontosO.innerHTML = pontoPlacarO;
 
         if (pontoPlacarO == 1 && verifReset == 0) {
-            console.log("placarO");
             verifReset = 1; // Prevenir execução repetida desnecessária
         }
-
-        console.log("Placar O: " + pontoPlacarO);
     }
 
     let winnerName = document.querySelector(".nomeWinner span");
     let perfilWinner = document.querySelector(".fotoWinner img")
+
     // Inicializar evento de reinício de jogo
     // Aqui vai mostrar quem foi o vencedor
     // Decide quantos rounds serão necessários:
@@ -302,12 +247,6 @@ function pontosPlacar(resultado) {
     }
 }
 
-
-
-
-
-
-
 function recomecarJogo() {
     let botao = document.querySelector(".botoes a.reset");
     
@@ -322,14 +261,9 @@ function recomecarJogo() {
         tableTicTacToe.style.display = "block";
         boxWinner.style.display = "none";
 
-        console.log("Jogo reiniciado");
-        console.log(nameX);
-
-
         reiniciarJogo();
     });
 }
-
 
 //FUNÇÃO: Verificar se deu EMPATE
 function deuEmpate(){
@@ -342,7 +276,6 @@ function deuEmpate(){
     }
     
     if(contEmpate == 9){
-        console.log("deu empate");
         reiniciarJogo();  
     }       
 }
@@ -358,7 +291,6 @@ function reiniciarJogo(){
     }, 200);
 }
 
-
 //FUNÇÃO: fazer elemento X
 function marcaX(){
     let span = document.createElement("span");
@@ -372,9 +304,6 @@ function marcaX(){
     }else{
         span.style.fontSize = "100px";
     }
-
-    // span.style.fontSize = "80px";
-
     
     span.style.color = "#48FC28";
     return span;
@@ -394,10 +323,6 @@ function marcaO(){
         span.style.fontSize = "100px";
     }
 
-    
     span.style.color = "#30E1D9";
     return span;
 }
-
-
-
