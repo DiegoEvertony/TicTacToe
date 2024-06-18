@@ -35,7 +35,7 @@ body {
 /* ----- HEADER ----- */
 
 header{
-    @include centralizarPosition;
+    // @include centralizarPosition;
 
     @include displayFlex("center");
     flex-direction: column;
@@ -45,7 +45,7 @@ header{
         span:nth-child(1){
             margin-right: 10px;
             line-height: .7em;
-            font-size: 150px;
+            font-size: 140px;
             color: $color5;
             text-shadow: 0px 4px 0px $color6;
 
@@ -57,7 +57,7 @@ header{
 
         span:nth-child(2){
             line-height: .7em;
-            font-size: 80px;
+            font-size: 75px;
             color: $color5;
             text-shadow: 0px 4px 0px $color6;
 
@@ -69,7 +69,7 @@ header{
         span:nth-child(3){
             display: block;
             line-height: .7em;
-            font-size: 207px;
+            font-size: 190px;
             color: $color5;
             text-shadow: 0px 4px 0px $color6;
 
@@ -80,7 +80,7 @@ header{
     }
 
     a{
-        width: min(100%, 430px);
+        width: min(100%, 400px);
         padding: 10px 5px;
         font-size: 40px;
         text-align: center;
@@ -98,7 +98,7 @@ header{
 
         @include tamanho("celular"){
             font-size: 26px;
-            width: min(100%, 286px);
+            width: min(100%, 266px);
             border-radius: 13px;
         }
     }
