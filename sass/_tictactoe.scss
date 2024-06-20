@@ -13,8 +13,9 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 0;
-    padding: 40px;
+    margin: 0px;
+    padding: 30px;
+
     @include centralizarPosition;
 }
 
@@ -35,13 +36,16 @@ body {
 
 /* ----- CONTEINER ----- */
 
+.bloco{
+    @include displayFlex("center");
+}
+
 #container {
     background-color: $colorBackground1;
     box-shadow: 2px 2px 6px #00000026;
     border-radius: 40px;
-    margin: 0 auto;
-    width: 400px;
-    height: 400px;
+    width: 345px;
+    height: 345px;
 
     @include displayFlex("center");
     flex-direction: column;
@@ -59,8 +63,8 @@ body {
     .box {
         background-color: $colorBackground2;
         border-radius: 25px;
-        height: 115px;
-        width: 115px;
+        height: 100px;
+        width: 100px;
         margin: 5px;
 
         @include displayFlex("center");
@@ -69,7 +73,7 @@ body {
             width: 77px;
             height: 77px;
             border-radius: 17px;
-            margin: 3.3px;
+            margin: 4px;
         }
 
         span.o{
@@ -90,17 +94,16 @@ body {
 
     @include tamanho("celular"){
         gap: .5em;
+        margin-bottom: 15px;
     }
 
     .person1 {
             background-color: $colorBackground1;
             box-shadow: 2px 2px 6px #00000026;
             border-radius: 40px;
-        
             width: min(100%, 192px);
             padding: 53px 0 20px;
             position: relative;
-        
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -108,8 +111,8 @@ body {
             @include tamanho("celular"){
                 width: min(100%, 128px);
                 padding: 35px 0 13px;
-                border-radius: 26px;
                 margin: 3.3px;
+                border-radius: 26px;
             }
     
         img{
@@ -128,7 +131,7 @@ body {
             font-size: 18px;
 
             @include tamanho("celular"){
-                font-size: 12px;
+                font-size: 14px;
             }
         }
     
@@ -136,8 +139,7 @@ body {
             background-color: $colorBackground2;
             border-radius: 25px;
             margin-top: 10px;
-            width: 112px;
-        
+            width: 105px;       
             display: flex;
             justify-content: center;
             align-items: baseline;
@@ -150,20 +152,17 @@ body {
             }
         }
     
-    
         .pontosX span{
-            font-size: 65px;
-            font-weight: 400;
+            font-size: 50px;
             color: $color1;
 
             @include tamanho("celular"){
-                font-size: 43px;
+                font-size: 40px;
             }
         }
     
         .pontosX span:nth-of-type(2){
-            font-size: 20px;
-            font-weight: 400;
+            font-size: 20px;    
             color: $color3;
 
             @include tamanho("celular"){
@@ -176,11 +175,9 @@ body {
         background-color: $colorBackground1;
         box-shadow: 2px 2px 6px #00000026;
         border-radius: 40px;
-
         padding: 53px 0 20px;
         width: 192px;
         position: relative;
-
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -208,7 +205,7 @@ body {
             font-size: 18px;
 
             @include tamanho("celular"){
-                font-size: 12px;
+                font-size: 14px;
             }
         }
 
@@ -216,8 +213,7 @@ body {
             background-color: $colorBackground2;
             border-radius: 25px;
             margin-top: 10px;
-            width: 112px;
-
+            width: 105px;
             display: flex;
             justify-content: center;
             align-items: baseline;
@@ -230,21 +226,17 @@ body {
             }
         }
 
-
         .pontosO span{
-            font-size: 65px;
-            font-weight: 400;
+            font-size: 50px;
             color: $color2;
 
             @include tamanho("celular"){
-                font-size: 43px;
+                font-size: 40px;
             }
-
         }
 
         .pontosO span:nth-of-type(2){
-            font-size: 20px;
-            font-weight: 400;
+            font-size: 20px;          
             color: $color3;
 
             @include tamanho("celular"){
@@ -262,35 +254,27 @@ body {
     background-color: $colorBackground1;
     background-image: url(../assets/images/fundo\ background\ winner.png);
     box-shadow: 2px 2px 6px #00000026;
-    
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-
-    width: 680px;
+    width: 400px;
     padding: 20px 10px;
     border-radius: 80px;
-    margin: 0 20px;
-
-    @include tamanho("tablet"){
-        width: 400px;
-        border-radius: 53px;
-    }
-
+    margin: 0 auto;
 
     @include tamanho("celular"){
         border-radius: 53px;
-        width: 250px;    
+        width: 266px;    
     }
 
     .fotoWinner{
         @include displayFlex("center");
 
         img{
-            width: min(100%, 230px);
+            width: min(100%, 195px);
     
             @include tamanho("celular"){
-                width: min(100%, 153px);
+                width: min(100%, 140px);
             }
         }
     }
@@ -306,19 +290,19 @@ body {
 
     > span{
         line-height: .9em;
-        font-size: 140px;
+        font-size: 120px;
         color: $color5;
         text-shadow: 0px 4px 0px $color6;
 
         @include tamanho("celular"){
-            font-size: 93px;
+            font-size: 80px;
         }
     }
 
     .botoes {
         @include displayFlex("center");
         gap: 1em;
-        margin: 8px 0;
+        margin: 10px 0px 0px;
 
         @include tamanho("celular"){
             gap: .5em;
@@ -328,7 +312,6 @@ body {
             @include displayFlex("center");
             padding: 10px 20px;
             width: 140px;
-        
             background-color: $colorBackground2;
             border-radius: 27px;
             border: none;
@@ -339,37 +322,26 @@ body {
                 transform: translate(0px, -4px);      
             }
 
-            @include tamanho("tablet"){
-                width: 110px;
-                height: 65px;
-                border-radius: 25px;
-            }
-
             @include tamanho("celular"){
-                width: 63px;
-                height: 40px;
+                width: 95px;
+                height: 55px;
                 border-radius: 18px;
             }
         }
 
         a.home img{
-            @include tamanho("tablet"){
-                width: 58px;
-                
-            }
+            width: 50px;
 
             @include tamanho("celular"){
-                width: 40px;
+                width: 35px;
             }
         }
 
         a.reset img{
-            @include tamanho("tablet"){
-                width: 55px;
-            }
+            width: 47px;
 
             @include tamanho("celular"){
-                width: 37px;
+                width: 32px;
             }
         }
     }

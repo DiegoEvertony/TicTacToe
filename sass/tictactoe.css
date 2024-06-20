@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 /* ----- RESET ----- */
 * {
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Nunito", sans-serif;
   text-decoration: none;
-  font-weight: 400;
+  box-sizing: border-box;
+  font-weight: 1000;
   outline: none;
   border: none;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* ----- BODY ----- */
@@ -18,13 +19,18 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0;
-  padding: 40px;
+  margin: 0px;
+  padding: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 88vh;
-  margin: 0;
+  height: 100vh;
+  margin: 0px;
+}
+@media (max-width: 490px) {
+  body {
+    height: 90vh;
+  }
 }
 
 /* ----- SCROLLBAR ----- */
@@ -42,13 +48,18 @@ body {
 }
 
 /* ----- CONTEINER ----- */
+.bloco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #container {
   background-color: #3C006B;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1490196078);
   border-radius: 40px;
-  margin: 0 auto;
-  width: 400px;
-  height: 400px;
+  width: 345px;
+  height: 345px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,8 +78,8 @@ body {
 #container .box {
   background-color: #8F00FF;
   border-radius: 25px;
-  height: 115px;
-  width: 115px;
+  height: 100px;
+  width: 100px;
   margin: 5px;
   display: flex;
   align-items: center;
@@ -79,7 +90,7 @@ body {
     width: 77px;
     height: 77px;
     border-radius: 17px;
-    margin: 3.3px;
+    margin: 4px;
   }
 }
 @media (max-width: 490px) {
@@ -99,6 +110,7 @@ body {
 @media (max-width: 490px) {
   .persons {
     gap: 0.5em;
+    margin-bottom: 15px;
   }
 }
 .persons .person1 {
@@ -116,8 +128,8 @@ body {
   .persons .person1 {
     width: min(100%, 128px);
     padding: 35px 0 13px;
-    border-radius: 26px;
     margin: 3.3px;
+    border-radius: 26px;
   }
 }
 .persons .person1 img {
@@ -137,14 +149,14 @@ body {
 }
 @media (max-width: 490px) {
   .persons .person1 .name span {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 .persons .person1 .pontosX {
   background-color: #8F00FF;
   border-radius: 25px;
   margin-top: 10px;
-  width: 112px;
+  width: 105px;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -158,18 +170,16 @@ body {
   }
 }
 .persons .person1 .pontosX span {
-  font-size: 65px;
-  font-weight: 400;
+  font-size: 50px;
   color: #48FC28;
 }
 @media (max-width: 490px) {
   .persons .person1 .pontosX span {
-    font-size: 43px;
+    font-size: 40px;
   }
 }
 .persons .person1 .pontosX span:nth-of-type(2) {
   font-size: 20px;
-  font-weight: 400;
   color: #D39BFF;
 }
 @media (max-width: 490px) {
@@ -213,14 +223,14 @@ body {
 }
 @media (max-width: 490px) {
   .persons .person2 .name span {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 .persons .person2 .pontosO {
   background-color: #8F00FF;
   border-radius: 25px;
   margin-top: 10px;
-  width: 112px;
+  width: 105px;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -234,18 +244,16 @@ body {
   }
 }
 .persons .person2 .pontosO span {
-  font-size: 65px;
-  font-weight: 400;
+  font-size: 50px;
   color: #30E1D9;
 }
 @media (max-width: 490px) {
   .persons .person2 .pontosO span {
-    font-size: 43px;
+    font-size: 40px;
   }
 }
 .persons .person2 .pontosO span:nth-of-type(2) {
   font-size: 20px;
-  font-weight: 400;
   color: #D39BFF;
 }
 @media (max-width: 490px) {
@@ -266,21 +274,15 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 680px;
+  width: 400px;
   padding: 20px 10px;
   border-radius: 80px;
-  margin: 0 20px;
-}
-@media (max-width: 800px) {
-  .conteinerWinner {
-    width: 400px;
-    border-radius: 53px;
-  }
+  margin: 0 auto;
 }
 @media (max-width: 490px) {
   .conteinerWinner {
     border-radius: 53px;
-    width: 250px;
+    width: 266px;
   }
 }
 .conteinerWinner .fotoWinner {
@@ -289,11 +291,11 @@ body {
   justify-content: center;
 }
 .conteinerWinner .fotoWinner img {
-  width: min(100%, 230px);
+  width: min(100%, 195px);
 }
 @media (max-width: 490px) {
   .conteinerWinner .fotoWinner img {
-    width: min(100%, 153px);
+    width: min(100%, 140px);
   }
 }
 .conteinerWinner .nomeWinner span {
@@ -307,13 +309,13 @@ body {
 }
 .conteinerWinner > span {
   line-height: 0.9em;
-  font-size: 140px;
+  font-size: 120px;
   color: #FEC500;
   text-shadow: 0px 4px 0px #E16300;
 }
 @media (max-width: 490px) {
   .conteinerWinner > span {
-    font-size: 93px;
+    font-size: 80px;
   }
 }
 .conteinerWinner .botoes {
@@ -321,7 +323,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1em;
-  margin: 8px 0;
+  margin: 10px 0px 0px;
 }
 @media (max-width: 490px) {
   .conteinerWinner .botoes {
@@ -343,38 +345,27 @@ body {
   box-shadow: -2px 5px 0px #FEC500;
   transform: translate(0px, -4px);
 }
-@media (max-width: 800px) {
-  .conteinerWinner .botoes a {
-    width: 110px;
-    height: 65px;
-    border-radius: 25px;
-  }
-}
 @media (max-width: 490px) {
   .conteinerWinner .botoes a {
-    width: 63px;
-    height: 40px;
+    width: 95px;
+    height: 55px;
     border-radius: 18px;
   }
 }
-@media (max-width: 800px) {
-  .conteinerWinner .botoes a.home img {
-    width: 58px;
-  }
+.conteinerWinner .botoes a.home img {
+  width: 50px;
 }
 @media (max-width: 490px) {
   .conteinerWinner .botoes a.home img {
-    width: 40px;
+    width: 35px;
   }
 }
-@media (max-width: 800px) {
-  .conteinerWinner .botoes a.reset img {
-    width: 55px;
-  }
+.conteinerWinner .botoes a.reset img {
+  width: 47px;
 }
 @media (max-width: 490px) {
   .conteinerWinner .botoes a.reset img {
-    width: 37px;
+    width: 32px;
   }
 }
 

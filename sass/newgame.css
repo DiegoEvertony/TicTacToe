@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 /* ----- RESET ----- */
 * {
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Nunito", sans-serif;
   text-decoration: none;
-  font-weight: 400;
+  box-sizing: border-box;
+  font-weight: 1000;
   outline: none;
   border: none;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* ----- BODY ----- */
@@ -19,7 +20,17 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 40px;
-  margin: 0;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0px;
+}
+@media (max-width: 490px) {
+  body {
+    height: 90vh;
+  }
 }
 
 /* ----- SCROLLBAR ----- */
@@ -39,20 +50,14 @@ body {
 /* ----- HEADER ----- */
 header {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 88vh;
-  margin: 0;
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 2em;
+  gap: 1.8em;
 }
 header h1 span:nth-child(1) {
-  margin-right: 10px;
   line-height: 0.7em;
-  font-size: 150px;
+  font-size: 140px;
   color: #FEC500;
   text-shadow: 0px 4px 0px #E16300;
 }
@@ -63,7 +68,7 @@ header h1 span:nth-child(1) {
 }
 header h1 span:nth-child(2) {
   line-height: 0.7em;
-  font-size: 80px;
+  font-size: 75px;
   color: #FEC500;
   text-shadow: 0px 4px 0px #E16300;
 }
@@ -75,7 +80,7 @@ header h1 span:nth-child(2) {
 header h1 span:nth-child(3) {
   display: block;
   line-height: 0.7em;
-  font-size: 207px;
+  font-size: 190px;
   color: #FEC500;
   text-shadow: 0px 4px 0px #E16300;
 }
@@ -85,11 +90,11 @@ header h1 span:nth-child(3) {
   }
 }
 header a {
-  width: min(100%, 430px);
-  padding: 10px 5px;
-  font-size: 40px;
-  text-align: center;
+  width: 100%;
+  padding: 4.8px 5px;
   color: white;
+  font-size: 38.4px;
+  text-align: center;
   text-shadow: 0px 4px 0px #CACACA;
   background-color: #FEC500;
   border-radius: 20px;
@@ -102,7 +107,7 @@ header a:hover {
 @media (max-width: 490px) {
   header a {
     font-size: 26px;
-    width: min(100%, 286px);
+    width: 100%;
     border-radius: 13px;
   }
 }

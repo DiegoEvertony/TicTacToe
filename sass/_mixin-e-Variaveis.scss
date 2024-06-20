@@ -3,16 +3,17 @@
 @mixin reset{
     font-family: $fontePrincipal;
     text-decoration: none;
-    font-weight: 400;
+    box-sizing: border-box;
+    font-weight: 1000;
     outline: none;
     border: none;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
 }
 
 //#Fonte
 
-$fontePrincipal: "Luckiest Guy", cursive;
+$fontePrincipal: "Nunito", sans-serif;
 
 //#Centralização
 
@@ -20,8 +21,12 @@ $fontePrincipal: "Luckiest Guy", cursive;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 88vh;
-    margin: 0;
+    height: 100vh;
+    margin: 0px;
+
+    @include tamanho("celular"){
+        height: 90vh;
+    }
 }
 
 //#Cores
@@ -35,13 +40,13 @@ $color5: #FEC500;
 $color6: #E16300;
 $color7: #CACACA;
 
-//Cor para Backgrounds
+//#Cor para Backgrounds
 $colorBackground1: #3C006B;
 $colorBackground2: #8F00FF;
 
 //#Mixins
 
-//display flex
+//#display flex
 @mixin displayFlex($espaco: 0){
     display: flex;
     align-items: center;
@@ -55,15 +60,7 @@ $colorBackground2: #8F00FF;
 
 //#responsividade
 @mixin tamanho($dimesao){
-    @if $dimesao == "tablet"{
-        @media (max-width: 800px){
-            @content;
-        }
-    }@else if $dimesao == "tablet/cel"{
-        @media (max-width: 600px){
-            @content;
-        }
-    }@else if $dimesao == "celular"{
+    @if $dimesao == "celular"{
         @media (max-width: 490px){
             @content;
         }
@@ -81,11 +78,7 @@ $colorBackground2: #8F00FF;
     
         100%{
             background-color: #E02D5C;
-            width: min(100%, 430px);
-
-            @include tamanho("celular"){
-                width: min(100%, 286px);
-            }
+            width: min(100%, 390px);
         }
     }
 
@@ -98,7 +91,7 @@ $colorBackground2: #8F00FF;
         
             100%{
                 background-color: #E02D5C;
-                width: min(100%, 286px);
+                width: min(100%, 250px);
             }
         }
     }

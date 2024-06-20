@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 /* ----- RESET ----- */
 * {
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Nunito", sans-serif;
   text-decoration: none;
-  font-weight: 400;
+  box-sizing: border-box;
+  font-weight: 1000;
   outline: none;
   border: none;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* ----- BODY ----- */
@@ -18,13 +19,18 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0;
+  margin: 0px;
   padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 88vh;
-  margin: 0;
+  height: 100vh;
+  margin: 0px;
+}
+@media (max-width: 490px) {
+  body {
+    height: 90vh;
+  }
 }
 
 /* ----- SCROLLBAR ----- */
@@ -43,9 +49,9 @@ body {
 
 /* ----- ALERT ----- */
 .alertButton {
+  width: min(100%, 390px);
   position: absolute;
   top: -26px;
-  width: min(100%, 430px);
   margin: 0 auto;
   padding: 5px;
   animation-name: animation1;
@@ -64,12 +70,7 @@ body {
   }
   100% {
     background-color: #E02D5C;
-    width: min(100%, 430px);
-    @media (max-width: 490px) {
-      .alertButton {
-        width: min(100%, 286px);
-      }
-    }
+    width: min(100%, 390px);
   }
 }
 @media (max-width: 490px) {
@@ -80,16 +81,16 @@ body {
     }
     100% {
       background-color: #E02D5C;
-      width: min(100%, 286px);
+      width: min(100%, 250px);
     }
   }
 }
 @media (max-width: 490px) {
   .alertButton {
-    width: min(100%, 286px);
+    width: min(100%, 250px);
     top: -15px;
-    border-radius: 10px;
     padding: 3.3px;
+    border-radius: 10px;
   }
 }
 .alertButton img.alertImg {
@@ -117,7 +118,7 @@ body {
 }
 .alertButton span.alertSpan {
   color: white;
-  font-size: 20px;
+  font-size: 19px;
   animation-name: animation2;
   animation-duration: 1s;
 }
@@ -137,17 +138,18 @@ body {
 }
 @media (max-width: 490px) {
   .alertButton span.alertSpan {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
 /* ----- CONTEINER ----- */
 .conteinerSetting {
   position: relative;
-  max-width: 455px;
+  max-width: 400px;
   background-color: #3C006B;
-  padding: 20px;
-  border-radius: 60px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1490196078);
+  border-radius: 50px;
+  padding: 15px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -156,13 +158,13 @@ body {
 }
 @media (max-width: 490px) {
   .conteinerSetting {
+    max-width: 266px;
     border-radius: 40px;
   }
 }
 .conteinerSetting h2 {
-  padding: 10px 0;
-  font-size: 27px;
   text-align: center;
+  font-size: 27px;
   color: #FEC500;
 }
 @media (max-width: 490px) {
@@ -170,20 +172,25 @@ body {
     font-size: 20px;
   }
 }
+@media (max-width: 490px) {
+  .conteinerSetting h2:nth-child(2) {
+    line-height: 1em;
+  }
+}
 .conteinerSetting .profiles {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.8em;
-  margin-bottom: -20px;
+  margin-bottom: -35px;
 }
 @media (max-width: 490px) {
   .conteinerSetting .profiles {
-    gap: 0.8em;
+    margin-bottom: -20px;
+    gap: 0.5em;
   }
 }
 .conteinerSetting .profiles img {
-  width: min(100%, 130px);
+  width: min(100%, 125px);
 }
 @media (max-width: 490px) {
   .conteinerSetting .profiles img {
@@ -237,7 +244,7 @@ body {
   gap: 1em;
 }
 .conteinerSetting .inputNameX span {
-  font-size: 55px;
+  font-size: 50px;
   color: #48FC28;
 }
 @media (max-width: 490px) {
@@ -248,18 +255,19 @@ body {
 .conteinerSetting .inputNameX input {
   width: min(100%, 180px);
   padding: 3px 10px;
+  color: #8F00FF;
+  font-size: 25px;
   border-radius: 10px;
   border: none;
-  font-size: 30px;
-  color: #8F00FF;
 }
 .conteinerSetting .inputNameX input::placeholder {
   color: #CACACA;
 }
 @media (max-width: 490px) {
   .conteinerSetting .inputNameX input {
-    font-size: 20px;
+    width: min(100%, 140px);
     border-radius: 7px;
+    font-size: 20px;
   }
 }
 .conteinerSetting .inputNameO {
@@ -269,7 +277,7 @@ body {
   gap: 1em;
 }
 .conteinerSetting .inputNameO span {
-  font-size: 55px;
+  font-size: 50px;
   color: #30E1D9;
 }
 @media (max-width: 490px) {
@@ -282,7 +290,7 @@ body {
   padding: 3px 10px;
   border-radius: 10px;
   border: none;
-  font-size: 30px;
+  font-size: 25px;
   color: #8F00FF;
 }
 .conteinerSetting .inputNameO input::placeholder {
@@ -290,23 +298,24 @@ body {
 }
 @media (max-width: 490px) {
   .conteinerSetting .inputNameO input {
-    font-size: 20px;
+    width: min(100%, 140px);
     border-radius: 7px;
+    font-size: 20px;
   }
 }
 .conteinerSetting .rounds {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: min(100%, 340px);
-  background-color: #8F00FF;
-  padding: 10px;
-  border-radius: 15px;
   gap: 0.7em;
+  width: min(100%, 330px);
+  padding: 10px;
+  background-color: #8F00FF;
+  border-radius: 15px;
 }
 @media (max-width: 490px) {
   .conteinerSetting .rounds {
-    width: min(100%, 244px);
+    width: min(100%, 220px);
   }
 }
 .conteinerSetting .rounds .checkClick {
@@ -320,11 +329,10 @@ body {
 }
 .conteinerSetting .rounds button {
   flex: 1;
-  padding: 5px;
-  border-radius: 10px;
   font-size: 33px;
   color: white;
   background-color: #3C006B;
+  border-radius: 10px;
   transition: 0.5s all;
 }
 .conteinerSetting .rounds button:hover {
@@ -333,19 +341,20 @@ body {
 }
 @media (max-width: 490px) {
   .conteinerSetting .rounds button {
-    font-size: 22px;
+    padding: 2px 0;
     border-radius: 7px;
+    font-size: 20px;
   }
 }
 .conteinerSetting a {
-  margin: 20px 0 0;
-  width: min(100%, 150px);
-  background-color: #8F00FF;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
-  padding: 10px 20px;
+  width: min(100%, 150px);
+  margin: 13px 0px 0px;
+  padding: 8px 20px;
+  background-color: #8F00FF;
+  border-radius: 18px;
   transition: 0.5s all;
 }
 .conteinerSetting a:hover {
@@ -359,7 +368,12 @@ body {
   }
 }
 .conteinerSetting a img {
-  width: min(100%, 50px);
+  width: min(100%, 45px);
+}
+@media (max-width: 490px) {
+  .conteinerSetting a img {
+    width: min(100%, 35px);
+  }
 }
 
 /*# sourceMappingURL=gamesetting.css.map */

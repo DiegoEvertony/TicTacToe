@@ -14,7 +14,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 40px;
-    margin: 0;
+    margin: 0px;
+
+    @include centralizarPosition;
 }
 
 /* ----- SCROLLBAR ----- */
@@ -35,17 +37,16 @@ body {
 /* ----- HEADER ----- */
 
 header{
-    @include centralizarPosition;
+   
 
     @include displayFlex("center");
     flex-direction: column;
-    gap: 2em;
+    gap: 1.8em;
 
     h1{
         span:nth-child(1){
-            margin-right: 10px;
             line-height: .7em;
-            font-size: 150px;
+            font-size: 140px;
             color: $color5;
             text-shadow: 0px 4px 0px $color6;
 
@@ -57,7 +58,7 @@ header{
 
         span:nth-child(2){
             line-height: .7em;
-            font-size: 80px;
+            font-size: 75px;
             color: $color5;
             text-shadow: 0px 4px 0px $color6;
 
@@ -69,7 +70,7 @@ header{
         span:nth-child(3){
             display: block;
             line-height: .7em;
-            font-size: 207px;
+            font-size: 190px;
             color: $color5;
             text-shadow: 0px 4px 0px $color6;
 
@@ -80,13 +81,12 @@ header{
     }
 
     a{
-        width: min(100%, 430px);
-        padding: 10px 5px;
-        font-size: 40px;
-        text-align: center;
+        width: 100%;
+        padding: 4.8px 5px;
         color: $color4;
+        font-size: 38.4px;
+        text-align: center;
         text-shadow: 0px 4px 0px $color7;
-    
         background-color: $color5;
         border-radius: 20px;
         transition: .5s all;
@@ -98,7 +98,7 @@ header{
 
         @include tamanho("celular"){
             font-size: 26px;
-            width: min(100%, 286px);
+            width: 100%;
             border-radius: 13px;
         }
     }
