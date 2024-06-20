@@ -58,6 +58,7 @@ header {
 header h1 span:nth-child(1) {
   line-height: 0.7em;
   font-size: 140px;
+  font-size: 140px;
   color: #FEC500;
   text-shadow: 0px 4px 0px #E16300;
 }
@@ -68,6 +69,7 @@ header h1 span:nth-child(1) {
 }
 header h1 span:nth-child(2) {
   line-height: 0.7em;
+  font-size: 75px;
   font-size: 75px;
   color: #FEC500;
   text-shadow: 0px 4px 0px #E16300;
@@ -80,6 +82,7 @@ header h1 span:nth-child(2) {
 header h1 span:nth-child(3) {
   display: block;
   line-height: 0.7em;
+  font-size: 190px;
   font-size: 190px;
   color: #FEC500;
   text-shadow: 0px 4px 0px #E16300;
