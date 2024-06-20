@@ -302,7 +302,7 @@ function marcaX(){
     if(window.matchMedia("(max-width: 490px)").matches){
         span.style.fontSize = "70px";
     }else{
-        span.style.fontSize = "100px";
+        span.style.fontSize = "90px";
     }
     
     span.style.color = "#48FC28";
@@ -320,7 +320,7 @@ function marcaO(){
     if(window.matchMedia("(max-width: 490px)").matches){
         span.style.fontSize = "70px";
     }else{
-        span.style.fontSize = "100px";
+        span.style.fontSize = "90px";
     }
 
     span.style.color = "#30E1D9";
