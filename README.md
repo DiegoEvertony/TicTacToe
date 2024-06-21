@@ -14,7 +14,7 @@
     <img src="./assets/images/preview.png" width ="1000px" alt="Exemplo imagem">
 </p>
 
-<p align="center"><a href="./newGame.html">Click to visit the project</a></p>
+<p align="center"><a href="https://tic-tac-toe-rho-roan.vercel.app">Click to visit the project</a></p>
 
 > Authorial project developed with the help of Figma for UX/UI design.
 
