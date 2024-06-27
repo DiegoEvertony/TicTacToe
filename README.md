@@ -50,7 +50,7 @@ Responsible for the project
   <tr>
     <td align="center">
       <a href="#" title="defina o titulo do link">
-        <img src="https://avatars.githubusercontent.com/u/143965677?s=400&u=9fcc55171ed6088dd99f8612a8b7d65f092fc77a&v=4" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/143965677?s=400&u=9fcc55171ed6088dd99f8612a8b7d65f092fc77a&v=4" width="100px;" alt="Foto do Diego Evertony no GitHub"/><br>
         <sub>
           <b>Diego Evertony</b>
         </sub>
@@ -64,4 +64,4 @@ Responsible for the project
     📝 License
 </h2>
 
-This project is under license. See the [LICENSE](LICENSE.md) file for more details.
+This project is under license. See the [LICENSE](LICENSE) file for more details.
